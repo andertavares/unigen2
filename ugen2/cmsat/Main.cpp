@@ -941,8 +941,8 @@ int32_t Main::BoundedSATCount(uint32_t maxSolutions, Solver &solver, vec<Lit> &a
     while (current_nr_of_solutions < maxSolutions && ret == l_True) {
 
         ret = solver.solve(allSATAssumptions);
-        current_nr_of_solutions++;
         if (ret == l_True && current_nr_of_solutions < maxSolutions) {
+            current_nr_of_solutions++;
             vec<Lit> lits;
             lits.push(Lit(activationVar, false));
             for (uint32_t j = 0; j < solver.independentSet.size(); j++) {
@@ -959,7 +959,7 @@ int32_t Main::BoundedSATCount(uint32_t maxSolutions, Solver &solver, vec<Lit> &a
     solver.addClause(cls_that_removes);
     if (ret == l_Undef){
         solver.needToInterrupt = false;
-        return -1*current_nr_of_solutions;
+        return -1*current_nr_of_solutions - 1;
     }
     return current_nr_of_solutions;
 }
@@ -1072,7 +1072,7 @@ SATCount Main::ApproxMC(Solver &solver, vector<FILE *> *resLog, std::mt19937 &ra
                     (currentNumSolutions == (int32_t)(conf.pivotApproxMC + 1)),currentNumSolutions);
                 fflush((*resLog)[0]);
             }
-            if (currentNumSolutions <= 0){
+            if (currentNumSolutions < 0){
                 assumptions.clear();
                 if (repeatTry < 2){     /* Retry up to twice more */
                     AddHash(hashCount,solver,assumptions,randomEngine);
