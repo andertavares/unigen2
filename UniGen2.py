@@ -32,7 +32,7 @@ def usage():
     usageStr += "pivotAC: pivot value for ApproxMC (default: 60)\n"
     usageStr += "tApproxMC: number of iterations for ApproxMC (default: 1)\n"
     print usageStr
-    exit(1)
+    sys.exit(1)
 
 def getInputs():
     paramMap={}
@@ -90,10 +90,10 @@ def main():
     action,error,paramMap = getInputs()
     if (action == 0):
         usage()
-        exit(1)
+        sys.exit(1)
     if (action == 1 or action == 2):
         print error
-        exit(1)
+        sys.exit(1)
     if (paramMap.has_key('runIndex')):
         runIndex = int(paramMap['runIndex'])
     if (paramMap.has_key('samples')):
