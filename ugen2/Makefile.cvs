@@ -1,0 +1,13 @@
+default: all
+
+all:
+	autoreconf -fvi
+	autoreconf --install
+	aclocal
+	autoheader
+	libtoolize --copy
+	autoreconf --install
+	automake --copy --add-missing
+	automake
+	autoconf
+
