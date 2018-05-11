@@ -1,16 +1,18 @@
 Installing UniGen2
 ------------------
 
-UniGen2 must be built using GCC 4.8 or higher, and requires libz.
-It has been tested on 64-bit Linux, and should work on similar systems which support the POSIX Realtime Extension (notably, Mac OS X is not one of these).
+UniGen2 must be built using GCC 4.8 or higher, and requires libz. You will also need "build-essential", i.e. automake, autoconf and libtool. It has been tested on 64-bit Linux, and should work on similar systems which support the POSIX Realtime Extension (notably, Mac OS X is not one of these).
 
-To build UniGen2, issue the following commands from this directory:
+To build UniGen2, issue the following commands from THIS directory:
 
+```
+make -f Makefile.cvs
 mkdir build
 cd build
 ../configure
 make
-cp unigen ../..
+./unigen -h
+```
 
 As described below, we provide the wrapper script 'UniGen2.py' in the directory above this one as an easy way to invoke UniGen2. This script can use the exact model counter sharpSAT to perform the preprocessing step of UniGen2, which is faster in some cases than UniGen2's internal model counter ApproxMC. To enable this functionality, provide binaries of the tools 'doalarm' and 'sharpSAT' in the script's directory (we have provided sources for them as part of this distribution). UniGen2.py will then try sharpSAT for 5 minutes before falling back on ApproxMC. If either binary is not present, ApproxMC will be used automatically.
 
