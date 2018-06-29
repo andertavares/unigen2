@@ -17,5 +17,7 @@ Please see the file `LICENSE-MIT`.
 
 (3) Mate Soos
 
+(4) Zayd Hammoudeh
+
 ### Contact ###
 * Kuldeep Meel (meel@comp.nus.edu.sg)
