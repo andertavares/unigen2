@@ -1058,7 +1058,7 @@ SATCount Main::ApproxMC(Solver &solver, vector<FILE *> *resLog, std::mt19937 &ra
         for (hashCount = 0; hashCount < solver.nVars(); hashCount++) {
             double currentTime = totalTime();
             elapsedTime = currentTime-startTime;
-            if (elapsedTime > conf.totalTimeout - 3000){
+            if (elapsedTime > conf.totalTimeout){
                 break;
             }
             double myTime = totalTime();
@@ -1092,7 +1092,7 @@ SATCount Main::ApproxMC(Solver &solver, vector<FILE *> *resLog, std::mt19937 &ra
 
         }
         assumptions.clear();
-        if (elapsedTime > conf.totalTimeout - 3000){
+        if (elapsedTime > conf.totalTimeout){
             break;
         }
         numHashList.push_back(hashCount);
@@ -1161,7 +1161,7 @@ uint32_t Main::UniGen(uint32_t samples, Solver &solver,
 
             double currentTime = totalTime(); 
             elapsedTime = currentTime-startTime;
-            if (elapsedTime > conf.totalTimeout - 3000){
+            if (elapsedTime > conf.totalTimeout){
                 break;
             }
             uint32_t maxSolutions = (uint32_t) (1.41*(1+conf.kappa)*conf.pivotUniGen +2);
@@ -1218,7 +1218,7 @@ uint32_t Main::UniGen(uint32_t samples, Solver &solver,
             i --;
         }
         assumptions.clear();
-        if (elapsedTime > conf.totalTimeout - 3000){
+        if (elapsedTime > conf.totalTimeout){
             break;
         }
     }
@@ -1339,7 +1339,7 @@ int Main::singleThreadSolve() {
         solCount = ApproxMC(solver, resLog, randomEngine);
         double elapsedTime = totalTime() - startTime;
         printf("Completed ApproxMC at %f s", elapsedTime);
-        if (elapsedTime > conf.totalTimeout - 3000){
+        if (elapsedTime > conf.totalTimeout){
             printf(" (TIMED OUT)\n");
             return 0;
         }
@@ -1424,7 +1424,7 @@ int Main::singleThreadSolve() {
             if (!timedOut)
             {
                 sampleCounter = singleThreadUniGenCall(numCallsInOneLoop,res,resLog,sampleCounter,threadSolutionMap,randomEngine,&lastSuccessfulHashOffset,threadStartTime);
-                if ((totalTime() - threadStartTime) > conf.totalTimeout - 3000)
+                if ((totalTime() - threadStartTime) > conf.totalTimeout)
                     timedOut = true;
             }
         }
