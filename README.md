@@ -7,8 +7,9 @@ Installation and usage instructions can be found in the "README.md" file in the 
 Benchmarks can be found [here](https://github.com/meelgroup/unigen-benchmarks). Please see the appendix of our TACAS 2015 [paper](http://www.comp.nus.edu.sg/~meel/Papers/Tacas15.pdf) for statistics on them.
 
 ### Papers ###
-[DAC 2014 Paper] http://www.comp.nus.edu.sg/~meel/Papers/DAC2014.pdf
-[TACAS 2015 Paper] http://www.comp.nus.edu.sg/~meel/Papers/Tacas15.pdf
+[DAC 2014 Paper](http://www.comp.nus.edu.sg/~meel/Papers/DAC2014.pdf)
+
+[TACAS 2015 Paper](http://www.comp.nus.edu.sg/~meel/Papers/Tacas15.pdf)
 ### Licensing ###
 Please see the file `LICENSE-MIT`.
 
