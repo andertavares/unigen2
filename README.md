@@ -4,7 +4,7 @@ UniGen is an almost-uniform generator of SAT witnesses for a given CNF formula. 
 For more details on hashing-based approach, please visit: http://www.kuldeepmeel.com
 
 Installation and usage instructions can be found in the "README.md" file in the "ugen2" folder.
-Benchmarks can be found [here](https://github.com/meelgroup/unigen-benchmarks). Please see the appendix of our TACAS 2015 [paper](http://www.comp.nus.edu.sg/~meel/Papers/Tacas15.pdf) for statistics on them.
+Benchmarks can be found [here](https://github.com/meelgroup/sampling-benchmarks). Please see the appendix of our TACAS 2015 [paper](http://www.comp.nus.edu.sg/~meel/Papers/Tacas15.pdf) for statistics on them.
 
 ### Papers ###
 [DAC 2014 Paper](http://www.comp.nus.edu.sg/~meel/Papers/DAC2014.pdf)
