@@ -1019,8 +1019,11 @@ lbool Main::BoundedSAT(uint32_t maxSolutions, uint32_t minSolutions, Solver &sol
         for (uint32_t i = 0; i < numSolutionsToReturn; i++) {
             vec<lbool> model = modelsSet.at(modelIndices.at(i));
             string solution ("v");
-            for (uint32_t j = 0; j < solver.independentSet.size(); j++) {
-                var = solver.independentSet[j];
+            //printf("nOrigVars: %d\n", solver.nOrigVars());
+            //for (uint32_t j = 0; j < solver.independentSet.size(); j++) {
+            for (uint32_t j = 0; j < solver.nOrigVars(); j++) { //nOrigVars?
+                //printf("Retrieving var %d\n", j);
+                var = j;// solver.independentSet[j];
                 if (model[var] != l_Undef) {
                     if (model[var] != l_True) {
                         solution += "-";
