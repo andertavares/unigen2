@@ -38,7 +38,7 @@ Thumbs.db
 # Miscellaneous Files #
 #######################
 *.log
-__*
+__init__.py
 *.csv
 *.txt
 *.png
