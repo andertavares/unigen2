@@ -1,3 +1,9 @@
+# IMPORTANT
+This is a fork of the deprecated Unigen 2, held here for historical purposes. If you want to use Unigen, go to its repo: https://github.com/meelgroup/unigen. 
+
+This repo has the code of Unigen 2, changed to return samples for all variables instead of only those in the minimal independent support, as in the original implementation. This change is detailed here: https://bitbucket.org/kuldeepmeel/unigen/issues/4/how-do-we-get-the-complete-model#comment-57606645.
+
+
 # README #
 UniGen is an almost-uniform generator of SAT witnesses for a given CNF formula. The code is based on hashing-based framework developed over the years. See overview paper [here](http://www.cs.rice.edu/~kgm2/Papers/BNP16.pdf) 
 
